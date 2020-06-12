@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Leaf Scrutiny Department</title>
+        <link rel="icon" type="image/x-icon" href="{% static 'test_app_1/images/favicon.ico' %}" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link rel="stylesheet" type="text/css" href="{% static 'test_app_1/styles.css' %}">
+    </head>
+    <body>
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+              <div class="custom-heading" href="{% url 'index' %}">
+                Leaf Scrutiny Department
+              </div>
+              <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i class="fas fa-bars ml-1"></i></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'index' %}#introduction">Introduction</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'index' %}#how-it-works">How it works</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'index' %}#about-us">About us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+      <header class="masthead">
+            <div class="container">
+                <div class="masthead-subheading">Welcome to our website</div>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#uploading">Test your leaves</a>
+            </div>
+        </header>
+      <section class="page-section bg-light" id="uploading">
+        <div class="text-center">
+          <h2 class="section-heading text-uppercase">Get your leaves checked</h2>
+          <h3 class="section-subheading text-muted">Please upload your files as .jpg</h3>
+          <form action="/action_page.php">
+            <label for="myfile">Select files:</label>
+            <input type="file" id="myfile" name="myfile" multiple><br><br>
+            <input type="submit" class="btn btn-primary btn-xl js-scroll-trigger">
+          </form>
+        </div>
+      </section>
+      <!-- Footer-->
+        <footer class="footer">
+            <div class="container">
+                <div class="text-center">
+                    <a>Copyright © Leaf Scrutiny Department 2020</a>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Contact form JS-->
+        <script src="{% static 'test_app_1/mail/jqBootstrapValidation.js' %}"></script>
+        <script src="{% static 'test_app_1/mail/contact_me.js' %}"></script>
+        <!-- Core theme JS-->
+        <script src="{% static 'test_app_1/scripts.js' %}"></script>
+    </body>
+</html>
