@@ -122,3 +122,33 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = 'media/'
+
+
+import keras
+import numpy as np
+from keras import backend as K
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
+from tensorflow.compat.v1.keras.backend import set_session
+
+
+def get_session():
+    config = tf.ConfigProto()
+    config.gpu_options.allow_growth = True
+    return tf.Session(config=config)
+
+set_session(get_session())
+
+config = tf.ConfigProto()
+config.gpu_options.allow_growth = True
+SESS = tf.Session(config=config)
+print("model loading")
+GRAPH1 = tf.get_default_graph()
+
+set_session(SESS)
+
+model = tf.keras.models.load_model('test_app_1/model/model_weight.hdf5')
